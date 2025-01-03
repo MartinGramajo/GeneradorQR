@@ -16,6 +16,7 @@ function App() {
         luego el video se elimina o se modifica el enlace, el código QR dejará
         de funcionar correctamente.
       </h6>
+      <Footer />
     </div>
   );
 }

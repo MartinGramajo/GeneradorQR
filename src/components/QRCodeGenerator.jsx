@@ -50,9 +50,9 @@ const QRCodeGenerator = () => {
         src={logoImage}
         alt="logo"
       />
-      <h2>Generador de Código QR</h2>
+      <h5 className="mt-5">Generador de Código QR</h5>
 
-      <h3>¿Cómo usarlo?</h3>
+      <h6>¿Cómo usarlo?</h6>
       <article className="mb-5 mt-4">
         <h6>
           1. Copia el enlace de la red social o página web (YouTube, Facebook,
