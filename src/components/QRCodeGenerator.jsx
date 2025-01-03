@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import logoImage from "../assets/logo.png"; // Ruta del logo
 import logoQR from "../assets/logoqr.png";
+import { Button } from "react-bootstrap";
 
 const QRCodeGenerator = () => {
   const [url, setUrl] = useState("");
@@ -100,21 +101,9 @@ const QRCodeGenerator = () => {
         </div>
       )}
       {url && (
-        <button
-          onClick={handleDownload}
-          style={{
-            marginTop: "20px",
-            padding: "10px 20px",
-            fontSize: "16px",
-            backgroundColor: "#e63946",
-            color: "#ffffff",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-          }}
-        >
+        <Button onClick={handleDownload} className="button-download">
           Descargar QR con Logo
-        </button>
+        </Button>
       )}
       {/* Lienzo auxiliar para preparar la descarga */}
       <canvas ref={downloadCanvasRef} style={{ display: "none" }}></canvas>

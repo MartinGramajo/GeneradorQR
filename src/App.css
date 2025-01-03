@@ -44,3 +44,14 @@
 .read-the-docs {
   color: #888;
 }
+
+.button-download {
+  margin-top: 20px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  background-color: #e63946 !important;
+  color: #ffffff;
+  border: none !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
