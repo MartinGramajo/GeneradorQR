@@ -50,27 +50,27 @@ const QRCodeGenerator = () => {
         alt="logo"
       />
       <h2>Generador de Código QR</h2>
-    
+
       <h3>¿Cómo usarlo?</h3>
-      <article className="mb-5">
-        <ol style={{ textAlign: "left", maxWidth: "600px"}}>
-          <li>
-            Copia el enlace de la red social o página web (YouTube, Facebook,
-            Twitter, etc.).
-          </li>
-          <li>Pega el enlace en el campo de texto con la leyenda <b>"Ingresa tu enlace".</b></li>
-          <li>
-            Verás el código QR generado automáticamente como una
-            previsualización.
-          </li>
-          <li>
-            Haz clic en el botón "Descargar QR con Logo" para guardarlo como
-            imagen.
-          </li>
-        </ol>
-   
+      <article className="mb-5 mt-4">
+        <h6>
+          1. Copia el enlace de la red social o página web (YouTube, Facebook,
+          Twitter, etc.).
+        </h6>
+        <h6>
+          2. Pega el enlace en el campo de texto con la leyenda{" "}
+          <b>"Ingresa tu enlace".</b>
+        </h6>
+        <h6>
+          3. Verás el código QR generado automáticamente como una
+          previsualización.
+        </h6>
+        <h6>
+          4. Haz clic en el botón "Descargar QR con Logo" para guardarlo como
+          imagen.
+        </h6>
       </article>
-  
+
       <input
         type="text"
         placeholder="Ingresa tu enlace"
@@ -79,7 +79,7 @@ const QRCodeGenerator = () => {
         style={{
           padding: "14px",
           fontSize: "16px",
-          width: "400px",
+          width: "300px",
           marginBottom: "20px",
           borderRadius: "5px",
           borderColor: "#cccccc",
