@@ -27,12 +27,19 @@ const QRCodeGenerator = () => {
     logo.src = logoQR;
     logo.onload = () => {
       const logoSize = canvasWidth * 0.2; // Tamaño relativo del logo
+      const padding = canvasWidth * 0.02; // Espaciado blanco alrededor del logo
       const centerX = (canvasWidth - logoSize) / 2;
       const centerY = (canvasHeight - logoSize) / 2;
 
-      // Crear un fondo blanco circular detrás del logo
+      // Crear un fondo blanco circular con padding alrededor del logo
       ctx.beginPath();
-      ctx.arc(centerX + logoSize / 2, centerY + logoSize / 2, logoSize / 2, 0, 2 * Math.PI);
+      ctx.arc(
+        centerX + logoSize / 2,
+        centerY + logoSize / 2,
+        logoSize / 2 + padding, // Radio aumentado por el padding
+        0,
+        2 * Math.PI
+      );
       ctx.fillStyle = "#ffffff"; // Fondo blanco
       ctx.fill();
 
