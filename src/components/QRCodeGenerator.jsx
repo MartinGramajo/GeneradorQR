@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
-import logoImage from "../assets/logo.png"; // Ruta del logo
-import logoQR from "../assets/logoqr.png";
+import logoImage from "../assets/logo.png"; // Ruta del logo grande
+import logoQR from "../assets/logoqr.png"; // Logo que irá en el centro del QR
 import { Button } from "react-bootstrap";
 
 const QRCodeGenerator = () => {
@@ -24,12 +24,19 @@ const QRCodeGenerator = () => {
 
     // Dibujar el logo sobre el QR
     const logo = new Image();
-    logo.src = logoQR; // Ruta del logo
+    logo.src = logoQR;
     logo.onload = () => {
       const logoSize = canvasWidth * 0.2; // Tamaño relativo del logo
       const centerX = (canvasWidth - logoSize) / 2;
       const centerY = (canvasHeight - logoSize) / 2;
 
+      // Crear un fondo blanco circular detrás del logo
+      ctx.beginPath();
+      ctx.arc(centerX + logoSize / 2, centerY + logoSize / 2, logoSize / 2, 0, 2 * Math.PI);
+      ctx.fillStyle = "#ffffff"; // Fondo blanco
+      ctx.fill();
+
+      // Dibujar el logo con bordes redondeados
       ctx.drawImage(logo, centerX, centerY, logoSize, logoSize);
 
       // Descargar el lienzo como imagen
@@ -59,16 +66,13 @@ const QRCodeGenerator = () => {
           Twitter, etc.).
         </h6>
         <h6>
-          2. Pega el enlace en el campo de texto con la leyenda{" "}
-          <b>"Ingresa tu enlace".</b>
+          2. Pega el enlace en el campo de texto con la leyenda <b>"Ingresa tu enlace".</b>
         </h6>
         <h6>
-          3. Verás el código QR generado automáticamente como una
-          previsualización.
+          3. Verás el código QR generado automáticamente como una previsualización.
         </h6>
         <h6>
-          4. Haz clic en el botón "Descargar QR con Logo" para guardarlo como
-          imagen.
+          4. Haz clic en el botón "Descargar QR con Logo" para guardarlo como imagen.
         </h6>
       </article>
 
@@ -97,6 +101,11 @@ const QRCodeGenerator = () => {
             bgColor={"#ffffff"}
             fgColor={"#000000"}
             includeMargin={true}
+            level={"H"} // Nivel alto de corrección de errores
+            style={{
+              borderRadius: "15px",
+              boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+            }}
           />
         </div>
       )}
